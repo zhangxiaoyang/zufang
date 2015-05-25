@@ -1,0 +1,6 @@
+final.db
+    hashurl title author(json) images(json) links(json) text pub_time jushi shouji zujin dizhi
+    1       2     3            4            5           6    7        8     9      10    11
+
+mining.db
+#    hashurl title content jushi(居室类型) shouji(手机号) zujin(租金) dizhi(地址标签)

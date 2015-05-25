@@ -1,0 +1,2 @@
+content.db
+    hashurl title author(json) images(json) links(json) text pub_time

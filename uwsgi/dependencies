@@ -1,0 +1,3 @@
+sudo apt-get install uwsgi uwsgi-core uwsgi-plugin-python
+sudo apt-get install python-dev
+sudo apt-get install libpcre3 libpcre3-dev

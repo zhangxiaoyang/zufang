@@ -1,0 +1,22 @@
+body {
+ font-family: "微软雅黑", Arial, sans-serif;
+}
+
+.header {
+  border-bottom: 1px solid #e5e5e5;
+  margin-bottom: 30px;
+}
+
+.footer {
+  border-top: 1px solid #e5e5e5;
+  color: #777777;
+  margin-top: 30px;
+  padding-top: 19px;
+}
+
+/*
+ * Fancybox nav arrorws permanent
+ */
+.fancybox-nav span {
+  visibility: visible;
+}

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+thisdir=${0%/*}
+linkdb="link.db"
+linkdb_src="$thisdir/../../link-spider/output"
+linkdb_dst="$thisdir/../data"
+
+function pull_linkdb()
+{
+    local linkdb=$1
+    local linkdb_src=$2
+    local linkdb_dst=$3
+    rm -f "$linkdb_dst/$linkdb"
+    ln -s "$linkdb_src/$linkdb" "$linkdb_dst"
+}
+pull_linkdb "$linkdb" "$linkdb_src" "$linkdb_dst"
+
+python -u "$thisdir/main.py" >> "$thisdir/../log/log" 2>&1

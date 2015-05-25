@@ -1,0 +1,3 @@
+#!/usr/bin/env bash
+thisdir=${0%/*}
+python -u "$thisdir/main.py" >> "$thisdir/../log/log" 2>&1

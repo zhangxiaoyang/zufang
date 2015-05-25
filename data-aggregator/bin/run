@@ -1,0 +1,69 @@
+#!/usr/bin/env bash
+
+thisdir=${0%/*}
+contentdb="content.db"
+contentdb_src="$thisdir/../../content-extractor/output"
+housedb="house.db"
+housedb_src="$thisdir/../../house-refinery/output"
+linkdb="link.db"
+linkdb_src="$thisdir/../../link-spider/output"
+dst="$thisdir/../data"
+
+function pull_housedb()
+{
+    local housedb=$1
+    local housedb_src=$2
+    local housedb_dst=$3
+    rm -f "$housedb_dst/$housedb"
+    ln -s "$housedb_src/$housedb" "$housedb_dst"
+}
+
+function pull_contentdb()
+{
+    local contentdb=$1
+    local contentdb_src=$2
+    local contentdb_dst=$3
+    rm -f "$contentdb_dst/$contentdb"
+    ln -s "$contentdb_src/$contentdb" "$contentdb_dst"
+}
+
+function pull_linkdb()
+{
+    local linkdb=$1
+    local linkdb_src=$2
+    local linkdb_dst=$3
+    rm -f "$linkdb_dst/$linkdb"
+    ln -s "$linkdb_src/$linkdb" "$linkdb_dst"
+}
+
+pull_contentdb "$contentdb" "$contentdb_src" "$dst"
+pull_housedb "$housedb" "$housedb_src" "$dst"
+pull_linkdb "$linkdb" "$linkdb_src" "$dst"
+
+## Make final
+finaldb="$thisdir/../output/final.db"
+bash "$thisdir/make_final.sh" "$contentdb" "$housedb" "$linkdb" "$dst" "$finaldb"
+
+## Filter data
+month_limit=2
+bash "$thisdir/filter_data.sh" "$finaldb" "$month_limit"
+
+## Filter img
+imglist="$thisdir/../output/imglist"
+imglist0="$imglist.0"
+imglist_diff="$imglist.diff"
+imgdir="$thisdir/../output/imgdir"
+touch "$imglist0" 
+mv "$imglist" "$imglist0"
+bash "$thisdir/filter_img.sh" "$finaldb.$month_limit" "$imglist"
+echo "Find diff: `diff "$imglist" "$imglist0" | wc -l`"
+diff "$imglist" "$imglist0" | awk '{if($2){print $2;}}' > "$imglist_diff"
+
+## Wget img
+bash "$thisdir/wget_img.sh" "$imglist_diff" "$imgdir"
+
+## Generate sim.db
+python -u "$thisdir/sim.py" >> "$thisdir/../log/log" 2>&1
+
+## Generate json file(sent to server)
+python -u "$thisdir/main.py" >> "$thisdir/../log/log" 2>&1

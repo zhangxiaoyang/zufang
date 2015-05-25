@@ -1,0 +1,16 @@
+#!/usr/bin/env bash
+
+thisdir=${0%/*}
+page_src="$thisdir/../../page-spider/output"
+page_dst="$thisdir/../data"
+
+function pull_page()
+{
+    local page_src=$1
+    local page_dst=$2
+    rm -f "$page_dst"/*
+    ln -s "$page_src"/* "$page_dst"
+}
+
+pull_page "$page_src" "$page_dst"
+python -u "$thisdir/main.py" >> "$thisdir/../log/log" 2>&1

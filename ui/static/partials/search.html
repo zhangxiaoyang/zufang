@@ -1,0 +1,45 @@
+<div ng-show="!houses" class="text-center">
+    <img src="http://img.t.sinajs.cn/t4/appstyle/expression/ext/normal/67/gangnamstyle_thumb.gif"> 疯狂加载中...
+</div>
+<div ng-show="houses">
+    <div class="row" ng-repeat="house in houses track by $index" ng-init="rowid=$index">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a target="_blank" href="{{house.url}}"><span class="glyphicon glyphicon-bookmark"></span> <strong>{{($index+1)+(page_num-1)*5}}. {{house.title}}</strong></a> <span ng-show="house.sim.length" ng-click="showDetails = !showDetails" ng-init="showDetails=false" class="label label-primary">{{house.sim.length}}条相似内容 <span ng-class="{true:'glyphicon glyphicon-chevron-up', false:'glyphicon glyphicon-chevron-down'}[showDetails]"></span></span>
+                        <span class="pull-right">{{house.pub_time}}</span>
+                    </div>
+                </div>
+            </div>
+            <div ng-show="showDetails" class="panel-heading" ng-repeat="sim in house.sim">
+                <div class="row">
+                    <div class="col-lg-12">
+                        <a target="_blank" href="{{sim.2}}">[相似内容] {{sim.1}}</a>
+                        <span class="pull-right">{{sim.3}}</span>
+                    </div>
+                </div>
+            </div>
+            <div class="panel-body div-ellipsis">{{house.text}}</div>
+            <hr style="margin: 0px;">
+            <div class="panel-body">
+                <p ng-if="house.dizhi.length"><span class="glyphicon glyphicon-map-marker"></span> <a href="http://map.baidu.com/?newmap=1&ie=utf-8&s=s{{('&wd='+dizhi) | escape}}" target="_blank" ng-repeat="dizhi in house.dizhi">{{dizhi}} </a></p>
+                <p ng-if="house.ditie.length"><span class="glyphicon glyphicon-road"></span> <a href="http://map.baidu.com/?newmap=1&ie=utf-8&s=s{{('&wd='+ditie) | escape}}" target="_blank" ng-repeat="ditie in house.ditie">{{ditie}} </a></p>
+                <p ng-if="house.jushi"><span class="glyphicon glyphicon-home"></span> {{house.jushi}}</p>
+                <p ng-if="house.shouji"><span class="glyphicon glyphicon-earphone"></span> {{house.shouji}}</p>
+                <p ng-if="house.zujin"><span class="glyphicon glyphicon-usd"></span> {{house.zujin}}</p>
+                <p ng-if="house.links.length"><span class="glyphicon glyphicon-link"></span> <a target="_blank" href="{{link}}" ng-repeat="link in house.links">{{link}}</a></p>
+                <p ng-if="house.images.length"><span class="glyphicon glyphicon-picture"></span> <a data-fancybox-group="fancy-group-{{rowid}}" class="fancy-image" target="_blank" href="{{image.0}}" title="{{image.1}}" ng-repeat="image in house.images"><img ng-src="{{image.0}}" err-src="/static/img/default_image.png" style="height: 30px;"> </a></p>
+                <p ng-if="house.confidence>-1"><span class="glyphicon glyphicon-star"></span> {{house.confidence}}</p>
+            </div>
+        </div>
+    </div>
+    <div class="btn-group btn-group-justified">
+        <div class="btn-group">
+            <a ng-disabled="page_prev==-1" href="#/search/{{query}}/{{page_prev}}" type="button" class="btn btn-default">上一页</a>
+        </div>
+        <div class="btn-group">
+            <a ng-disabled="page_next==-1" href="#/search/{{query}}/{{page_next}}" type="button" class="btn btn-default">下一页</a>
+        </div>
+    </div>
+</div>

@@ -1,0 +1,6 @@
+Django==1.7
+argparse==1.2.1
+distribute==0.6.24
+mongoengine==0.8.7
+pymongo==2.7.2
+wsgiref==0.1.2

@@ -1,0 +1,18 @@
+#!/usr/bin/env bash
+
+thisdir=${0%/*}
+contentdb="content.db"
+contentdb_src="$thisdir/../../content-extractor/output"
+contentdb_dst="$thisdir/../data"
+
+function pull_contentdb()
+{
+    local contentdb=$1
+    local contentdb_src=$2
+    local contentdb_dst=$3
+    rm -f "$contentdb_dst/$contentdb"
+    ln -s "$contentdb_src/$contentdb" "$contentdb_dst"
+}
+pull_contentdb "$contentdb" "$contentdb_src" "$contentdb_dst"
+
+python -u "$thisdir/main.py" >> "$thisdir/../log/log" 2>&1

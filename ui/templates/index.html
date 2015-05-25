@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-CN" ng-app="uiApp">
+<head>
+  <meta charset="utf-8">
+  <title>找新窝</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="IE=9">
+  <meta name="renderer" content="webkit">
+  <script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+  ga('create', 'UA-46826647-2', 'auto');
+  ga('send', 'pageview');
+  </script>
+  {% load staticfiles %}
+  <link rel="shortcut icon" href="{% static "img/favicon.ico" %}">
+  <link href="{% static "bootstrap3/css/bootstrap.min.css" %}" rel="stylesheet">
+  <link href="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css" rel="stylesheet">
+  <link href="{% static "css/app.css" %}" rel="stylesheet">
+  <script>
+      var _hmt = _hmt || [];
+      (function() {
+          var hm = document.createElement("script");
+        hm.src = "//hm.baidu.com/hm.js?3af853a1f72c2a9101c1db3bcee51be9";
+        var s = document.getElementsByTagName("script")[0]; 
+        s.parentNode.insertBefore(hm, s);
+    })();
+  </script>
+</head>
+<body style="padding-top: 0px;">
+  <div class="container-fluid">
+    <div ng-controller="NavbarController" class="row header">
+      <div class="container">
+        <div class="pull-left">
+          <a href="/"><img src="/static/img/logo-sm.png" style="width: 50px;"></a>
+        </div>
+        {% verbatim %}
+        <form ng-if="!is_homepage()" ng-submit="go('/search/{{query}}')" class="form-inline pull-right" style="padding: 10px;">
+            <div class="input-group">                                                                                                        
+                <input ng-model="query" ng-minlength="2" ng-maxlength="50" type="text" class="form-control">
+                <span class="input-group-btn">
+                    <button class="btn btn-default" type="submit"><span class="glyphicon glyphicon-search"></span></button>
+                </span>
+            </div>
+        </form>
+        {% endverbatim %}
+      </div>
+    </div>
+    <div class="container-fluid" ng-view></div>
+    <div class="row footer text-center">
+        &copy; zhaoxinwo.com 2015 | <a href="http://weibo.com/1704839092" target="_blank">@么什小洋</a> <a href="http://weibo.com/jiadebin1989" target="_blank">@Debin_IIE</a> | <a href="#/donate" style="color: red;"><img src="/static/img/alipay.png" style="max-height:20px;"></a>
+    </div>
+    <!-- JiaThis Button BEGIN -->
+    <div class="jiathis_style" style="margin: 0px auto; width: 130px; padding: 5px;">
+        <a class="jiathis_button_tsina"></a>
+        <a class="jiathis_button_douban"></a>
+        <a class="jiathis_button_weixin"></a>
+        <a class="jiathis_button_renren"></a>
+        <a class="jiathis_button_qzone"></a>
+        <a href="http://www.jiathis.com/share?uid=1971839" class="jiathis jiathis_txt jtico jtico_jiathis" target="_blank"></a>
+    </div>
+    <!-- JiaThis Button END -->
+  </div>
+  {% load staticfiles %}
+  <script src="{% static "js/jquery-2.0.3.min.js" %}"></script>
+  <script src="http://cdn.bootcss.com/angular.js/1.1.5/angular.min.js"></script>
+  <!--<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.1.5/angular.min.js"></script>-->
+  <script src="{% static "bootstrap3/js/bootstrap.min.js" %}"></script>
+  <script src="{% static "js/app.js" %}"></script>
+  <script src="{% static "js/services.js" %}"></script>
+  <script src="{% static "js/controllers.js" %}"></script>
+  <script src="http://cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.pack.js"></script>
+  <!--<script src="{% static "js/jquery.dotdotdot.min.js" %}"></script>-->
+  <script>
+  $(document).ready(function() {
+    $('.fancy-image').fancybox({'cyclic':true});
+    //$('.div-ellipsis').dotdotdot({height:100});
+  });
+  </script>
+  <script type="text/javascript" >
+    var jiathis_config = {
+        data_track_clickback:'true',
+        url:"http://www.zhaoxinwo.com/",
+        title:"分享一款基于豆瓣租房小组数据的搜房App: 找新窝(http://www.zhaoxinwo.com) #找新窝#",
+        summary:"",
+        pic:"http://ww1.sinaimg.cn/large/659dc7b4gw1ekvszwjxl9j20mk0rnwg3.jpg"
+    };
+  </script>
+  <script type="text/javascript" src="http://v3.jiathis.com/code/jia.js?uid=1971839" charset="utf-8"></script>
+</body>
+</html>
