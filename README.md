@@ -10,22 +10,19 @@ Up till now, zhaoxinwo has been running for 8 months and more than one thousand 
 
 ![](screenshot.png)
 
-![](http://file.market.xiaomi.com/thumbnail/jpeg/l395/AppStore/02a1a5c21e79dbdb82c728744965dd3dda643883e)
+![](screenshot1.jpg)
 
-![](http://file.market.xiaomi.com/thumbnail/jpeg/l395/AppStore/084f85a641426ad4ff5130e2b32eedb6ced40d74a)
-
+![](screenshot2.jpg)
 
 Website
 ---
 
 <http://zhaoxinwo.com>
 
-
 Android
 ---
 
 <http://app.mi.com/detail/83659>
-
 
 License
 ---
