@@ -8,6 +8,8 @@ zhaoxinwo can help you search douban rental data(e.g. <http://www.douban.com/gro
 
 Up till now, zhaoxinwo has been running for 8 months and more than one thousand users used it.
 
+The android source code is here: <https://github.com/zhaoxinwo/zhaoxinwo-android>.
+
 ![](screenshot.png)
 
 ![](screenshot1.jpg)
