@@ -50,7 +50,8 @@ then
     bash manage.sh run all
 
     echo "Moving images ..."
-    mv data-aggregator/output/imgdir/* "$imgdir"
+    #mv data-aggregator/output/imgdir/* "$imgdir"
+    find data-aggregator/output/imgdir/ -name '*.*' | xargs -i mv {} "$imgdir"
 
     echo "Cleaning img cache ..."
     clean_img_cache "$imglist" "$imgdir"
