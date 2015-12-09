@@ -21,10 +21,14 @@ Website
 
 <http://zhaoxinwo.com>
 
+![](zhaoxinwo-web.gif)
+
 Android
 ---
 
 <http://app.mi.com/detail/83659>
+
+![](zhaoxinwo-android.gif)
 
 License
 ---
