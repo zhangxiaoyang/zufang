@@ -1,6 +1,8 @@
 zhaoxinwo source code
 ===
 
+**zhaoxinwo source code has been migrated to <https://github.com/zhaoxinwo/zufang>**
+
 Introduction
 ---
 
