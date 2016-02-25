@@ -6,22 +6,19 @@ Introduction
 
 zhaoxinwo can help you search douban rental data(e.g. <http://www.douban.com/group/26926/>). Since we launched zhaoxinwo in October 2015, there are thousands of users used it. Now zhaoxinwo is open-source, including the backend services, android app and iOS app.
 
-Source codes:
+Source codes
+---
 
-1. Backend services: <https://github.com/zhaoxinwo/zufang>
-2. Android app: <https://github.com/zhaoxinwo/zhaoxinwo-android>
-3. iOS app: <https://github.com/zhengbuqian/Zhaoxinwo>
-
-![](screenshot.png)
-
-![](screenshot1.jpg)
-
-![](screenshot2.jpg)
+- Backend services: <https://github.com/zhaoxinwo/zufang>
+- Android app: <https://github.com/zhaoxinwo/zhaoxinwo-android>
+- iOS app: <https://github.com/zhengbuqian/Zhaoxinwo>
 
 Website
 ---
 
 <http://zhaoxinwo.com>
+
+![](screenshot.png)
 
 ![](zhaoxinwo-web.gif)
 
@@ -30,6 +27,10 @@ Android
 
 <http://app.mi.com/detail/83659>
 
+![](screenshot1.jpg)
+
+![](screenshot2.jpg)
+
 ![](zhaoxinwo-android.gif)
 
 iOS
@@ -37,7 +38,13 @@ iOS
 
 <https://github.com/zhengbuqian/Zhaoxinwo>
 
-![](https://github.com/zhengbuqian/Zhaoxinwo/raw/master/iOS_Version1_0.gif)
+<img src="https://github.com/zhengbuqian/Zhaoxinwo/raw/master/iOS-Screenshot01.png" width="224px">
+
+<img src="https://github.com/zhengbuqian/Zhaoxinwo/raw/master/iOS-Screenshot02.png" width="224px">
+
+<img src="https://github.com/zhengbuqian/Zhaoxinwo/raw/master/iOS-Screenshot03.png" width="224px">
+
+<img src="https://github.com/zhengbuqian/Zhaoxinwo/raw/master/iOS_Version1_0.gif" width="224px">
 
 License
 ---
