@@ -36,7 +36,7 @@ Android
 iOS
 ---
 
-<https://github.com/zhengbuqian/Zhaoxinwo>
+<https://itunes.apple.com/cn/app/zhao-xin-wo/id1086589862>
 
 <img src="https://github.com/zhengbuqian/Zhaoxinwo/raw/master/iOS-Screenshot01.png" width="224px">
 
