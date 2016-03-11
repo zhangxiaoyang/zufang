@@ -6,6 +6,11 @@ Introduction
 
 zhaoxinwo can help you search douban rental data(e.g. <http://www.douban.com/group/26926/>). Since we launched zhaoxinwo in October 2015, there are thousands of users used it. Now zhaoxinwo is open-source, including the backend services, android app and iOS app.
 
+Deployment
+---
+
+<https://github.com/zhaoxinwo/zufang/wiki>
+
 Source codes
 ---
 
