@@ -43,7 +43,7 @@ function clean_page_cache()
 echo "START: $(date '+%Y-%m-%d %H:%M:%S')"
 load_env
 
-lastestCmd=`ps aux | grep  "zufang.*run\|manage.sh" | grep -v grep`
+lastestCmd=`ps aux | grep  "zufang.*run\|manage.sh" | grep -v "runserver" | grep -v grep`
 if [ "$lastestCmd" == "" ]
 then
     echo "Updating ..."
