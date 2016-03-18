@@ -1,6 +1,9 @@
 zhaoxinwo source code
 ===
 
+*Please contact me before commercial use.*
+*商业用途请先联系作者*
+
 Introduction
 ---
 
