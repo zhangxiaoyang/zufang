@@ -27,7 +27,7 @@ do
 
     ((index=RANDOM%arr_len))
     ua=${agents[$index]}
-    wget --user-agent="$ua" --tries=5 --quiet --timeout=20 -O "$imgname" "$url"
+    wget --user-agent="$ua" --no-check-certificate --tries=5 --quiet --timeout=20 -O "$imgname" "$url"
     if [ ! -f "$imgname" ]
     then
         echo "wget failed $url"
