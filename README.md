@@ -12,7 +12,7 @@ zhaoxinwo can help you search douban rental data(e.g. <http://www.douban.com/gro
 Deployment
 ---
 
-<https://github.com/zhaoxinwo/zufang/wiki>
+<https://github.com/zhangxiaoyang/zufang/wiki>
 
 Source codes
 ---
