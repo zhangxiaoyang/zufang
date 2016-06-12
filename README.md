@@ -17,7 +17,7 @@ Deployment
 Source codes
 ---
 
-- Backend services: <https://github.com/zhaoxinwo/zufang>
+- Backend services: <https://github.com/zhangxiaoyang/zufang>
 - Android app: <https://github.com/zhaoxinwo/zhaoxinwo-android>
 - iOS app: <https://github.com/zhengbuqian/Zhaoxinwo>
 
